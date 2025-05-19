@@ -1,0 +1,3 @@
+[submodule "psdfile_krkrz"]
+	path = psdfile_krkrz
+	url = https://github.com/wamsoft/psdfile.git
