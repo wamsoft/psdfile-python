@@ -20,9 +20,16 @@ To install the project, clone the repository and run the following command:
 
 ```bash
 # Specify the path to your vcpkg toolchain file for cmake
-export VCPKG_ROOT=c:/vcpkg
+export VCPKG_ROOT=c:/work/vcpkg
 # set vcpkg triplet (to specify with static boost/zlib library)
 export VCPKG_TARGET_TRIPLET=x64-windows-static
+pip install . -v
+```
+
+```powershell
+# windows powershell
+$Env:VCPKG_ROOT = "c:/work/vcpkg"
+$Env:VCPKG_TARGET_TRIPLET = "x64-windows-static"
 pip install . -v
 ```
 

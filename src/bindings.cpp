@@ -37,7 +37,20 @@ public:
     // ファイルからの読み込み
     bool loadFromFile(const std::string& filepath) {
         clearData();
+        // For Windows, convert string to wstring before loading
+#ifdef _WIN32
+        std::wstring wideFilepath;
+        try {
+            // Use Boost to convert UTF-8 string to wstring
+            wideFilepath = boost::locale::conv::utf_to_utf<wchar_t>(filepath);
+            return psd::PSDFile::load(wideFilepath.c_str());
+        } catch (const std::exception& e) {
+            return false;
+        }
+#else
+        // For non-Windows systems, use standard char* path
         return psd::PSDFile::load(filepath.c_str());
+#endif
     }
 
     // バイトデータからの読み込み
