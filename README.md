@@ -1,3 +1,6 @@
+
+XXX 開発中。まだ動きません
+
 # PSDParse Python Binding
 
 This project provides Python bindings for the `psdparse` library, allowing you to work with Adobe Photoshop (PSD) files in a Python environment. It enables extraction of layers, images, and metadata from PSD files, which can be manipulated as Python dictionaries.
